@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220805101417">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220805220927">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,12 @@
 				</div>
 			</div>
 			<div class="header__container">
+				<nav class="burger_menu">
 
+				</nav>
+				<div class="menu_icon">
+					<span></span>
+				</div>
 				<div class="header__row">
 					<div class="header__item">
 						<a href="#" class="header__logo">
@@ -59,7 +64,7 @@
 					</div>
 					<div class="header__item">
 						<nav class="header__menu">
-							<ul>
+							<ul data-da=".burger_menu,650,1">
 								<li><a href="#">Home</a></li>
 								<li><a href="#">About Us</a></li>
 								<li><a href="#">Services</a></li>
@@ -80,7 +85,7 @@
 					<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
 						dolore magna
 						aliqua.</span>
-					<a href="home-pets.html" class="first_screen_phone">Pets: 01566772211</a><span>8.30am -
+					<a href="home-pets.html" class="first_screen_phone">Pets: 01566772211</a><span class="working_time">8.30am -
 						3.00pm</span>
 				</div>
 			</section>
@@ -88,7 +93,7 @@
 				<div class="__container">
 					<div class="welcom__row">
 						<div class="welcom__item">
-							<img src="img/welcom-1.jpg" alt=""><img src="img/welcom-2.jpg" alt="">
+							<picture><source srcset="img/welcom-1.webp" type="image/webp"><img src="img/welcom-1.jpg" alt=""></picture><picture><source srcset="img/welcom-2.webp" type="image/webp"><img src="img/welcom-2.jpg" alt=""></picture>
 						</div>
 						<div class="welcom__item">
 							<h2 class="title">Welcome to <span class="title_mark">Our Clinic</span></h2>
@@ -305,7 +310,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20220805101417"></script>
+	<script src="js/app.min.js?_v=20220805220927"></script>
 </body>
 
 </html>
