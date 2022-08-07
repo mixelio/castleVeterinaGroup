@@ -1143,6 +1143,13 @@ body._lock {
   line-height: 45px;
   color: #344A5F;
   margin-bottom: 20px;
+  -webkit-transition-duration: 300ms;
+       -o-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.our_team .our_team__slide:hover h3 {
+  color: #8FC423;
 }
 
 .our_team .our_team__slide p {
