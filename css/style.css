@@ -572,6 +572,11 @@ body._lock {
   margin-right: 10px;
 }
 
+.contact_us {
+  background: #eee;
+  padding-top: 40px;
+}
+
 .contact_us .title {
   color: #344A5F;
   text-align: center;
@@ -1631,8 +1636,27 @@ body._lock {
   color: #fff;
 }
 
+.services__list .services_tabs__content [hidden] {
+  opacity: 0;
+}
+
+.services__list .services_tabs__content:not([hidden]) {
+  opacity: 1;
+}
+
 .services__list .services_tabs__body {
+  -webkit-transition-duration: 300ms;
+       -o-transition-duration: 300ms;
+          transition-duration: 300ms;
   margin-bottom: 20px;
+  -webkit-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  opacity: 1;
+}
+
+.services__list .services_tabs__body [hidden] {
+  opacity: 0;
 }
 
 .services__list .services_tabs__body img {
@@ -1993,15 +2017,15 @@ body._lock {
   overflow: hidden;
 }
 
-@supports (margin-right: clamp( 1.25rem , 0.1630434783rem  +  2.8985507246vw , 3.75rem )) {
+@supports (margin-right: clamp( 0.625rem , -0.6095679012rem  +  6.1728395062vw , 3.75rem )) {
   .header__menu ul li:not(:last-child) {
-    margin-right: clamp( 1.25rem , 0.1630434783rem  +  2.8985507246vw , 3.75rem );
+    margin-right: clamp( 0.625rem , -0.6095679012rem  +  6.1728395062vw , 3.75rem );
   }
 }
 
-@supports not (margin-right: clamp( 1.25rem , 0.1630434783rem  +  2.8985507246vw , 3.75rem )) {
+@supports not (margin-right: clamp( 0.625rem , -0.6095679012rem  +  6.1728395062vw , 3.75rem )) {
   .header__menu ul li:not(:last-child) {
-    margin-right: calc(1.25rem + 2.5 * (100vw - 37.5rem) / 86.25);
+    margin-right: calc(0.625rem + 3.125 * (100vw - 20rem) / 50.625);
   }
 }
 
@@ -2226,12 +2250,6 @@ body._lock {
 
 .footer__social ul li:hover svg path {
   fill: #E35062;
-}
-
-@media (min-width: 123.75em) {
-  .header__menu ul li:not(:last-child) {
-    margin-right: inherit;
-  }
 }
 
 @media (max-width: 950px) {
@@ -2773,12 +2791,6 @@ body._lock {
 
 @media (max-width: 56.25em) {
   .contact_us__item:first-child {
-    margin-right: inherit;
-  }
-}
-
-@media (max-width: 37.5em) {
-  .header__menu ul li:not(:last-child) {
     margin-right: inherit;
   }
 }
