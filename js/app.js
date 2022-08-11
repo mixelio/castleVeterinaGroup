@@ -1101,6 +1101,22 @@
         }));
     }
     accordion();
+    function filterBurger() {
+        const blogFilter = document.getElementById("blog_filter");
+        const filterTitle = document.getElementById("filter_title");
+        if (filterTitle) {
+            const container = document.getElementById("filter_container");
+            const blogFilterHeith = container.offsetHeight;
+            if (filterTitle) filterTitle.addEventListener("click", (function(e) {
+                blogFilter.classList.toggle("_active");
+                if (blogFilter.classList.contains("_active")) {
+                    blogFilter.style.paddingBottom = blogFilterHeith + "px";
+                    console.log(blogFilter.classList);
+                } else blogFilter.style.paddingBottom = 0 + "px";
+            }));
+        }
+    }
+    filterBurger();
     window["FLS"] = true;
     isWebp();
     tabs();
