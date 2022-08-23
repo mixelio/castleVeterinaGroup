@@ -1117,6 +1117,57 @@
         }
     }
     filterBurger();
+    function tabsToAcc() {
+        const tabsBlocks = document.querySelectorAll("[data-tabs]");
+        const screenWidth = window.innerWidth;
+        for (let i = 0; i < tabsBlocks.length; i++) {
+            if (tabsBlocks[i].getAttribute("data-tabs") >= screenWidth) {
+                tabsBlocks[i].setAttribute("data-tabs-animate", "");
+                let buttonsTabs = tabsBlocks[i].querySelectorAll("BUTTON");
+                console.log(tabsBlocks[i].className);
+                for (let j = 0; j < buttonsTabs.length; j++) {
+                    buttonsTabs[j].classList.add("tab_" + (j + 1));
+                    let modTab = "tab_" + j;
+                    console.log(buttonsTabs[j]);
+                    console.log(modTab);
+                    buttonsTabs[j].dataset.goto = "." + modTab;
+                }
+            } else tabsBlocks[i].removeAttribute("data-tabs-animate");
+            window.addEventListener("resize", (() => {
+                const screenWidth = window.innerWidth;
+                if (screenWidth <= tabsBlocks[i].getAttribute("data-tabs")) {
+                    tabsBlocks[i].setAttribute("data-tabs-animate", "");
+                    let buttonsTabs = tabsBlocks[i].querySelectorAll("BUTTON");
+                    console.log(tabsBlocks[i].className);
+                    for (let j = 0; j < buttonsTabs.length; j++) {
+                        buttonsTabs[j].classList.add("tab_" + (j + 1));
+                        let modTab = "tab_" + j;
+                        console.log(buttonsTabs[j]);
+                        console.log(modTab);
+                        buttonsTabs[j].dataset.goto = "." + modTab;
+                    }
+                } else {
+                    tabsBlocks[i].removeAttribute("data-tabs-animate");
+                    buttonsTabs[j].dataset.goto = "";
+                }
+            }));
+        }
+    }
+    tabsToAcc();
+    if (isMobile.any()) {
+        document.body.classList.add("touch");
+        let arrow = document.querySelectorAll(".arrow");
+        for (let i = 0; i < arrow.length; i++) {
+            let thisLink = arrow[i].previousElementSibling;
+            let subMenu = arrow[i].nextElementSibling;
+            let thisArrow = arrow[i];
+            thisLink.classList.add("subMenuLink");
+            arrow[i].addEventListener("click", (function() {
+                subMenu.classList.toggle("open");
+                thisArrow.classList.toggle("active");
+            }));
+        }
+    } else document.body.classList.add("desktop");
     window["FLS"] = true;
     isWebp();
     tabs();
