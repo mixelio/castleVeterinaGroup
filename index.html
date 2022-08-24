@@ -207,7 +207,7 @@
 	}
 
 	.start_screen__header_phone:not(:last-child) {
-		margin-right: 45px;
+		margin-right: 10%;
 	}
 
 	.start_screen__header_phone span {
@@ -457,6 +457,10 @@
 			width: 200px;
 		}
 	}
+	  @media (max-width: 650px) {
+    .start_screen__row {
+      flex-direction: column;
+    }
 </style>
 <script>
 	function activeBlock() {
