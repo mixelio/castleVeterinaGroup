@@ -1082,16 +1082,15 @@
                 hideElements[1].style.top = heightTitle + 5 + "px";
             }
             accord[i].addEventListener("click", (function(e) {
-                for (let j = 0; j < accord.length; j++) if (accord[j].classList.contains("_active")) {
-                    accord[j].classList.remove("_active");
-                    accord[j].style.paddingBottom = 0 + "px";
-                }
                 accord[i].classList.toggle("_active");
                 if (accord[i].classList.contains("_active")) {
                     let hideElements = accord[i].children;
                     let heightElement = hideElements[1].offsetHeight;
                     let heightTitle = hideElements[0].offsetHeight;
                     accord[i].style.paddingBottom = heightElement + "px";
+                    hideElements[1].style.top = heightTitle + 5 + "px";
+                } else {
+                    accord[i].style.paddingBottom = 0 + "px";
                     hideElements[1].style.top = heightTitle + 5 + "px";
                 }
             }));
