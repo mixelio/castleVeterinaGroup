@@ -1169,10 +1169,10 @@
                 thisArrow.classList.toggle("active");
                 if (subMenu.classList.contains("open")) {
                     thisLink.style.paddingBottom = heightSubmenu + 20 + "px";
-                    subMenu.style.top = heightLink + 10 + "px";
+                    subMenu.style.top = heightLink + 20 + "px";
                 } else {
                     thisLink.style.paddingBottom = 0 + "px";
-                    subMenu.style.top = 0 + "px";
+                    subMenu.style.top = heightLink + 10 + "px";
                 }
             }));
         }
