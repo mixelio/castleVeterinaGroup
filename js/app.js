@@ -1161,10 +1161,19 @@
             let thisLink = arrow[i].previousElementSibling;
             let subMenu = arrow[i].nextElementSibling;
             let thisArrow = arrow[i];
+            let heightSubmenu = subMenu.offsetHeight;
+            let heightLink = thisLink.offsetHeight;
             thisLink.classList.add("subMenuLink");
             arrow[i].addEventListener("click", (function() {
                 subMenu.classList.toggle("open");
                 thisArrow.classList.toggle("active");
+                if (subMenu.classList.contains("open")) {
+                    thisLink.style.paddingBottom = heightSubmenu + 20 + "px";
+                    subMenu.style.top = heightLink + 10 + "px";
+                } else {
+                    thisLink.style.paddingBottom = 0 + "px";
+                    subMenu.style.top = 0 + "px";
+                }
             }));
         }
     } else document.body.classList.add("desktop");
