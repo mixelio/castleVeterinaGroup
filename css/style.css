@@ -2504,6 +2504,7 @@ body._lock {
 .care_guides .care_guides__title_box {
   position: relative;
   height: 200px;
+  cursor: pointer;
 }
 
 .care_guides .care_guides__title_box:before {
