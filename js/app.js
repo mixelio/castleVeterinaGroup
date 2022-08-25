@@ -1176,6 +1176,39 @@
             }));
         }
     } else document.body.classList.add("desktop");
+    function accordionCareFarm() {
+        const accord = document.querySelectorAll(".accordion_care_farm__item");
+        if (accord.length > 0) for (let i = 0; i < accord.length; i++) {
+            if (accord[i].classList.contains("_active")) {
+                let hideElements = accord[i].children;
+                let heightTitle = hideElements[0].offsetHeight;
+                let heightElement = hideElements[1].offsetHeight;
+                accord[i].style.paddingBottom = heightElement + "px";
+                hideElements[1].style.top = heightTitle + "px";
+            }
+            accord[i].addEventListener("click", (function(e) {
+                for (let j = 0; j < accord.length; j++) if (accord[j].classList.contains("_active")) {
+                    accord[j].classList.remove("_active");
+                    accord[j].style.paddingBottom = 0 + "px";
+                }
+                accord[i].classList.toggle("_active");
+                if (accord[i].classList.contains("_active")) {
+                    let hideElements = accord[i].children;
+                    let heightElement = hideElements[1].offsetHeight;
+                    let heightTitle = hideElements[0].offsetHeight;
+                    accord[i].style.paddingBottom = heightElement + "px";
+                    hideElements[1].style.top = heightTitle + "px";
+                } else {
+                    accord[i].style.paddingBottom = 0 + "px";
+                    hideElements[1].style.top = heightTitle + "px";
+                }
+            }));
+        } else for (let i = 0; i < accord.length; i++) accord[i].addEventListener("click", (function(e) {
+            for (let j = 0; j < accord.length; j++) if (accord[j].classList.contains("_active")) accord[j].classList.remove("_active");
+            accord[i].classList.toggle("_active");
+        }));
+    }
+    accordionCareFarm();
     window["FLS"] = true;
     isWebp();
     tabs();

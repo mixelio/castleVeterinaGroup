@@ -2463,19 +2463,47 @@ body._lock {
   color: #344A5F;
 }
 
+.care_farm__first_screen {
+  margin-bottom: 50px;
+}
+
 .care_guides {
-  padding: 50px 0 20px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .care_guides:last-child {
   margin-bottom: 80px;
 }
 
+.care_guides .__container {
+  position: relative;
+  -webkit-transition-duration: 500ms;
+       -o-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+
+.care_guides .__container._active {
+  margin-bottom: 50px;
+}
+
+.care_guides .__container._active .care_guides__title_box h3:before {
+  -webkit-transform: rotateZ(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotateZ(-180deg);
+}
+
+.care_guides .__container._active .downloud_list {
+  opacity: 1;
+  -webkit-transform: translateY(25px);
+      -ms-transform: translateY(25px);
+          transform: translateY(25px);
+}
+
 .care_guides .care_guides__title_box {
-  max-width: 740px;
   position: relative;
   height: 200px;
-  margin-bottom: 40px;
 }
 
 .care_guides .care_guides__title_box:before {
@@ -2504,6 +2532,7 @@ body._lock {
 
 .care_guides .care_guides__title_box h3 {
   position: absolute;
+  max-width: 75%;
   z-index: 2;
   left: 20px;
   bottom: 20px;
@@ -2513,11 +2542,93 @@ body._lock {
   color: #FFFFFF;
 }
 
-.care_guides .downloud_list li {
+.care_guides .care_guides__title_box h3:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  right: -40px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 10px 0 10px;
+  border-color: #ffffff transparent transparent transparent;
+  z-index: 5;
+  -webkit-transition-duration: 500ms;
+       -o-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+
+.care_guides .downloud_list {
+  padding: 0 0.9375rem;
+  position: absolute;
+  width: 100%;
+  left: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.3fr 0.5fr;
-  grid-template-columns: 0.3fr 0.5fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition-duration: 500ms;
+       -o-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+
+@supports ((-moz-column-gap: clamp( 0.3125rem , -0.7986111111rem  +  5.5555555556vw , 3.125rem )) or (column-gap: clamp( 0.3125rem , -0.7986111111rem  +  5.5555555556vw , 3.125rem ))) {
+  .care_guides .downloud_list {
+    -webkit-column-gap: clamp( 0.3125rem , -0.7986111111rem  +  5.5555555556vw , 3.125rem );
+       -moz-column-gap: clamp( 0.3125rem , -0.7986111111rem  +  5.5555555556vw , 3.125rem );
+            column-gap: clamp( 0.3125rem , -0.7986111111rem  +  5.5555555556vw , 3.125rem );
+  }
+}
+
+@supports not ((-moz-column-gap: clamp( 0.3125rem , -0.7986111111rem  +  5.5555555556vw , 3.125rem )) or (column-gap: clamp( 0.3125rem , -0.7986111111rem  +  5.5555555556vw , 3.125rem ))) {
+  .care_guides .downloud_list {
+    -webkit-column-gap: calc(0.3125rem + 2.8125 * (100vw - 20rem) / 50.625);
+       -moz-column-gap: calc(0.3125rem + 2.8125 * (100vw - 20rem) / 50.625);
+            column-gap: calc(0.3125rem + 2.8125 * (100vw - 20rem) / 50.625);
+  }
+}
+
+.care_guides .downloud_list:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 33.333%;
+  height: 100%;
+  width: 1px;
+  background-color: #eee;
+}
+
+.care_guides .downloud_list:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 33.333%;
+  height: 100%;
+  width: 1px;
+  background-color: #eee;
+}
+
+.care_guides .downloud_list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .care_guides .downloud_list li span {
@@ -2562,10 +2673,6 @@ body._lock {
 
 .care_guides .downloud_list li a:hover svg path:first-child {
   fill: #963231;
-}
-
-.care_guides .downloud_list li:not(:last-child) {
-  margin-bottom: 20px;
 }
 
 .contact_info .__container {
@@ -3310,7 +3417,7 @@ body._lock {
 }
 
 .news_post .news_post__container .news_post__promo a:hover {
-  background: #030FE1;
+  background: #8FC423;
 }
 
 .news_post .news_post__form_container {
@@ -3366,7 +3473,7 @@ body._lock {
 }
 
 .news_post .subscribe input[type=submit]:hover {
-  background: #030FE1;
+  background: #8FC423;
 }
 
 .no-webp .news_post__help{
@@ -4352,6 +4459,7 @@ a.subMenuLink {
     border: 1px solid #E9EAEE;
     border-left: 1px solid #E9EAEE;
     border-top: none;
+    border-radius: 0 0 3px 3px;
   }
 
   .main_container .main_post .main_post__subitem img {
@@ -4362,11 +4470,11 @@ a.subMenuLink {
   }
 
   .main_container .main_post:hover a {
-    color: #3D46EC;
+    color: #8FC423;
   }
 
   .main_container .main_post:hover a h2 {
-    color: #3D46EC;
+    color: #8FC423;
     cursor: pointer;
   }
 
@@ -4382,7 +4490,7 @@ a.subMenuLink {
   }
 
   .main_container .main_post:hover svg path {
-    fill: #3D46EC;
+    fill: #8FC423;
   }
 
   .main_container .main_item:last-child {
@@ -4668,9 +4776,17 @@ a.subMenuLink {
     width: 100%;
   }
 
-  .care_guides .downloud_list li {
-    -ms-grid-columns: 0.5fr 0.3fr;
-    grid-template-columns: 0.5fr 0.3fr;
+  .care_guides .downloud_list {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .care_guides .downloud_list:before {
+    left: 50%;
+  }
+
+  .care_guides .downloud_list:after {
+    display: none;
   }
 }
 
@@ -4914,6 +5030,21 @@ a.subMenuLink {
       line-height: calc(2.25rem + 1.5 * (100vw - 20rem) / 50.625);
     }
 }
+}
+
+@media (max-width: 550px) {
+  .care_guides .downloud_list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .care_guides .downloud_list:before {
+    display: none;
+  }
+
+  .care_guides .downloud_list:after {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
